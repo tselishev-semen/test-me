@@ -1,0 +1,15 @@
+#containerRegistryUrl: 729874884792.dkr.ecr.eu-central-1.amazonaws.com
+#vaultNamespace: admin/development
+#environment: development
+services:
+  - name: test-nginx
+    namespace: rain-container-web
+    image: nginx
+    version: latest
+    replicas: 2
+    ports:
+      -port: 8080
+    envVars:
+      - name: Name_Test
+        value: Value_test
+

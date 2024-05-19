@@ -1,0 +1,3 @@
+https://devops.stackexchange.com/questions/13379/use-one-helm-chart-for-all-microservices
+
+https://helm.sh/docs/helm/helm_dependency/
