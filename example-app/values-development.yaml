@@ -9,4 +9,3 @@ services:
     envVars:
       - name: Name_Test
         value: Value_test
-
