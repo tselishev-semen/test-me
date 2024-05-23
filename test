@@ -1,0 +1,1 @@
+helm template . --name-template nginx --values ./example-app/values-development.yaml

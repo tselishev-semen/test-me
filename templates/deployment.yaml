@@ -1,34 +1,33 @@
-{ { range .Values.services } }
+{{ range .Values.services }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .name } }-deployment
+  name: {{ .name }}-deployment
   labels:
-    app: { { .name } }
+    app: {{ .name }}
 spec:
-  replicas: { { .replicas | default 1 } }
+  replicas: {{ .replicas | default 1 }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: { { .name } }
+      app.kubernetes.io/name: {{ .name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: { { .name } }
+        app.kubernetes.io/name: {{ .name }}
     spec:
       containers:
-          - name: { { .name } }
-#            image: { { $.Values.containerRegistryUrl } }/{{ .image }}:{{ .version }}
+          - name: {{ .name }}
             image: {{ .image }}:{{ .version }}
             imagePullPolicy: Always
             ports:
-             { { range $index, $port := .ports } }
-              - name: port{{ $index }}
-                containerPort: { { $port.port } }
-              { { end } }
+        {{ range $index, $port := .ports }}
+            - name: port{{ $index }}
+              containerPort: {{ $port.port }}
+        {{ end }}
             env:
-              { { range $index, $port := .envVars } }
-              - name: { { env.name } }
-                value: { { env.value } }
-              { { end } }
+        {{ range $index, $env := .envVars }}
+            - name: {{ $env.name }}
+              value: {{ $env.value }}
+        {{ end }}
 ---
-{ { end } }
+{{ end }}
