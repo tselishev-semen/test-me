@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: {{ .name }}-deployment
   labels:
-    app: {{ .name }}
+    app.kubernetes.io/name: {{ .name }}
 spec:
   replicas: {{ .replicas | default 1 }}
   selector:
