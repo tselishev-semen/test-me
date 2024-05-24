@@ -1,6 +1,0 @@
-apiVersion: v1
-name: test-me
-description: test me
-type: application
-version: 0.1.0
-appVersion: 0.1.0
