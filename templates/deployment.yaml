@@ -27,7 +27,7 @@ spec:
             env:
         {{ range $index, $env := .envVars }}
             - name: {{ $env.name }}
-              value: {{ $env.value }}
+              value: "{{ $env.value }}"
         {{ end }}
 ---
 {{ end }}
