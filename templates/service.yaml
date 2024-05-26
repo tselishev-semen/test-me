@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: {{ .name }}
-  type: NodePort
+  type: ClusterIP
   ports:
   {{ range $index, $port := .ports }}
   - protocol: TCP
