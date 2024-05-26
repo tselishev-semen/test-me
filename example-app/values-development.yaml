@@ -9,3 +9,5 @@ services:
     envVars:
       - name: Name_Test
         value: Value_test
+      - name: NGINX_PORT
+        value: 8080
