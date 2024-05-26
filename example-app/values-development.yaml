@@ -5,7 +5,7 @@ services:
     version: latest
     replicas: 2
     hosts:
-      - localhost
+      - nginx.local
     #TODO  we should be able to set the all ingress settings
     publicPort: 80
     ports:
