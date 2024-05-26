@@ -1,0 +1,9 @@
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+
+https://argo-cd.readthedocs.io/en/stable/getting_started/#port-forwarding
+
+
+ingress https://kind.sigs.k8s.io/docs/user/ingress/#using-ingress
