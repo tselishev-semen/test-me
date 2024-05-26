@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: {{ .name }}
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   {{ range $index, $port := .ports }}
   - protocol: TCP
