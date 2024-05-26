@@ -6,8 +6,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-  ingressClassName: nginx
-
   rules:
   {{ $service := . }}
   - http:
