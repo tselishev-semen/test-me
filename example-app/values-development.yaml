@@ -10,7 +10,7 @@ services:
     publicPort: 8091
     ports:
       - port: 8091
-      - targetPort: 80
+        targetPort: 80
     envVars:
       - name: Name_Test
         value: Value_test
