@@ -9,17 +9,14 @@ spec:
   ingressClassName: nginx
   rules:
   {{ $service := . }}
-  {{ range .hosts }}
-  - host: {{ . | quote }}
     http:
       paths:
-      - path: /test
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ $service.name }}
-            port:
-              number: {{ $service.publicPort }}
-  {{ end }}
+        - path: /test
+          pathType: Prefix
+          backend:
+            service:
+              name: {{ $service.name }}
+              port:
+                number: {{ $service.publicPort }}
 ---
 {{ end }}
