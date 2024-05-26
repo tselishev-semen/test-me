@@ -7,10 +7,9 @@ services:
     hosts:
       - nginx.local
     #TODO  we should be able to set the all ingress settings
-    publicPort: 8091
+    publicPort: 80
     ports:
-      - port: 8091
-        targetPort: 80
+      - port: 80
     envVars:
       - name: Name_Test
         value: Value_test
