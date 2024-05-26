@@ -4,6 +4,8 @@ services:
     image: nginx
     version: latest
     replicas: 2
+    hosts:
+      - localhost
     ports:
       - port: 80
     envVars:
