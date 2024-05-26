@@ -6,6 +6,8 @@ services:
     replicas: 2
     hosts:
       - localhost
+    #TODO  we should be able to set the all ingress settings
+    publicPort: 80
     ports:
       - port: 80
     envVars:
