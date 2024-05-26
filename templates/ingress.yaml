@@ -9,7 +9,6 @@ spec:
   ingressClassName: nginx
   rules:
   {{ $service := . }}
-  {{ range .hosts }}
   - http:
       paths:
       - path: /
@@ -19,6 +18,5 @@ spec:
             name: {{ $service.name }}
             port:
               number: {{ $service.publicPort }}
-  {{ end }}
 ---
 {{ end }}
