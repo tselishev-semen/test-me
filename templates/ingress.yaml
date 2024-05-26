@@ -4,14 +4,15 @@ kind: Ingress
 metadata:
   name: {{ .name }}-ingress
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
+
   rules:
   {{ $service := . }}
   - http:
       paths:
-      - path: /
+      - path: /hello(/|$)(.*)
         pathType: Prefix
         backend:
           service:
